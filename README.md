@@ -20,10 +20,13 @@ out = cv2.addWeighted(out1, alpha, out2, beta, 0)
 ```
 
 Below are four image samples from the same location during different time periods:
+
 ![image](https://user-images.githubusercontent.com/34719495/121390681-9bcaef00-c91b-11eb-88b8-060e473f9477.png)
 
 After merging images the output looks like below. You can see how stationary objects (fallen logs which are our targets) stand out and the non-stationary objects (standing trees and shadows) look pale. Blended images like this are used during the training process. 
+
 ![image](https://user-images.githubusercontent.com/34719495/121392412-5c9d9d80-c91d-11eb-8450-55bfe7c0d0e5.png)
+
 
 
 After manual annotation of such images with LabelMe, and splitting the data to train/eval, the model is trained for 20 epochs (backbone resnet 101 and pretrained weights mask_rcnn_coco). 
